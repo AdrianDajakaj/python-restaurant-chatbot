@@ -1,0 +1,24 @@
+{
+    "orderType": "deliver",
+    "orderPositions": [
+        {
+            "name": "Pizza",
+            "price": 12,
+            "preparation_time": 0.5,
+            "modifications": ""
+        },
+        {
+            "name": "Lasagne",
+            "price": 16,
+            "preparation_time": 1,
+            "modifications": ""
+        },
+        {
+            "name": "Burger",
+            "price": 12.5,
+            "preparation_time": 0.2,
+            "modifications": ""
+        }
+    ],
+    "orderAddress": "123 Main Street"
+}

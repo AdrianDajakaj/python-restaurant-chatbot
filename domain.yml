@@ -1,0 +1,91 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_if_open
+  - ask_for_menu
+  - order_willingness
+  - choose_order_type
+  - add_dish_to_order
+  - provide_address
+  - end_order
+
+entities:
+  - day_of_week
+  - time
+  - order_type
+  - dish
+  - address
+
+slots:
+  day_of_week:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: day_of_week
+        intent: ask_if_open
+        value: today
+
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+        not_intent: ask_if_open
+        value: "unknown"
+  
+  order_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_type
+  
+  dish:
+    type: text
+    mappings: 
+      - type: from_entity
+        entity: dish
+
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: dish
+
+responses:
+
+  utter_opening_hours:
+    - text: "We are open on {day_of_week} from {opening_hours}."
+    
+  utter_open_status:
+    - text: "Yes, we are open on {day_of_week} at {time}."
+
+  utter_closed:
+    - text: "Unfortunately we are closed then."
+
+  utter_greet:
+  - text: "Welcome to our restaurant!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_ordertype:
+  - text: "Should the order be delivered or picked up at the restaurant?"
+
+  utter_address:
+  - text: "Please provide your home address"
+
+
+actions:
+  - action_check_restaurant_open
+  - action_show_menu
+  - action_order_begin
+  - action_check_dish_in_menu
+  - action_adress_provider
+  - action_order_summarize
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

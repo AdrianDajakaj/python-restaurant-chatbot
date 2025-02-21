@@ -1,0 +1,33 @@
+version: "3.1"
+
+stories:
+# - story: Order with delivery
+#   steps:
+#     - intent: order_willingness
+#     - action: utter_ordertype
+#     - intent: choose_order_type
+#       entities:
+#         - order_type: "deliver"
+#     - action: action_order_begin  # Zaczynamy proces zamówienia, przechodzimy do etapu dodawania dania
+#     - intent: add_dish_to_order
+#     - action: action_check_dish_in_menu  # Sprawdzamy, czy danie jest w menu
+#     - intent: end_order
+#     - action: utter_address  # Pytamy o adres dostawy
+#     - intent: provide_address
+#     - action: action_adress_provider
+#     - action: action_order_summarize
+
+# - story: Order with pick-up
+#   steps:
+#     - intent: order_willingness
+#     - action: utter_ordertype
+#     - intent: choose_order_type
+#       entities:
+#         - order_type: "pick-up"
+#     - action: action_order_begin  # Zaczynamy proces zamówienia, przechodzimy do etapu dodawania dania
+#     - intent: add_dish_to_order
+#     - action: action_check_dish_in_menu  # Sprawdzamy, czy danie jest w menu
+#     - intent: end_order
+#     - action: action_order_summarize
+
+

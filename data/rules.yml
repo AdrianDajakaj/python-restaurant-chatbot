@@ -1,0 +1,50 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Ask if the restaurant is open
+  steps:
+  - intent: ask_if_open
+  - action: action_check_restaurant_open
+
+- rule: User asks for the menu
+  steps:
+  - intent: ask_for_menu
+  - action: action_show_menu
+
+- rule: User willing to order
+  steps:
+    - intent: order_willingness
+    - action: utter_ordertype
+
+- rule: User selects order type
+  steps:
+    - intent: choose_order_type
+    - action: action_order_begin
+
+- rule: User adds dish to order
+  steps:
+    - intent: add_dish_to_order
+    - action: action_check_dish_in_menu  
+
+- rule: User finishes order
+  steps:
+    - intent: end_order
+    - action: utter_address
+
+- rule: Summarize order
+  steps:
+    - intent: provide_address
+    - action: action_adress_provider
+    - action: action_order_summarize
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
